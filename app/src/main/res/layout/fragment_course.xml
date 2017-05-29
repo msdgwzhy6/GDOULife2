@@ -17,7 +17,7 @@
             android:gravity="center"
             android:text="@string/discovery"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/exit_course_textView"
