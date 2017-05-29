@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_grade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.fedming.gdoulife.activity.GradeSearchActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/login_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="成绩查询"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/account_editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@mipmap/ic_login_user"
+            android:drawablePadding="5dp"
+            android:hint="正方系统学号"
+            android:inputType="number"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/password_editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/ic_login_pwd"
+            android:drawablePadding="5dp"
+            android:hint="正方系统密码"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/code_imageView"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_check_code" />
+
+            <EditText
+                android:id="@+id/img_code_editText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toLeftOf="@id/code_imageView"
+                android:drawableLeft="@mipmap/ic_verify"
+                android:drawablePadding="3dp"
+                android:hint="请输入验证码"
+                android:maxLength="4"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+        <Spinner
+            android:gravity="center"
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp" />
+
+        <CheckBox
+            android:id="@+id/is_remember_pwd_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:checked="true"
+            android:text="记住密码"
+            android:theme="@style/checkBoxStyle"
+            android:textColor="@color/grey_800"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_login_round"
+            android:text="查  询"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/grade_webView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/content_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <!--<TextView-->
+            <!--android:drawableLeft="@mipmap/ic_grade_user"-->
+            <!--android:id="@+id/userName_textView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="54dp"-->
+            <!--android:background="@color/grey_200"-->
+            <!--android:drawablePadding="5dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="10dp"-->
+            <!--android:textSize="18sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:background="@color/grey_200"-->
+            <!--android:drawableLeft="@mipmap/ic_grade"-->
+            <!--android:drawablePadding="5dp"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="8dp"-->
+            <!--android:text="我的成绩："-->
+            <!--android:textSize="18sp" />-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/grade_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

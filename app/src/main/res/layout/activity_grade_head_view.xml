@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/userName_textView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:drawableLeft="@mipmap/ic_grade_user"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:textSize="18sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/ic_grade"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:text="我的成绩："
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey" />
+
+</LinearLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:gravity="center"
+            android:text="@string/more"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/ic_system"
+        android:drawablePadding="3dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="正方系统"
+        android:textColor="@color/grey_800" />
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/my_course_relativeLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/grey_100"-->
+        <!--android:paddingLeft="15dp"-->
+        <!--android:paddingRight="15dp">-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@mipmap/ic_right" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="我的课表"-->
+            <!--android:textSize="16sp" />-->
+
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/my_grade_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey_100"
+        android:paddingLeft="26dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/ic_right" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="我的成绩"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/ic_sticky"
+        android:drawablePadding="3dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:paddingTop="8dp"
+        android:text="海大生活"
+        android:textColor="@color/grey_800" />
+
+    <RelativeLayout
+        android:id="@+id/life_one_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_100"
+        android:paddingLeft="26dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/ic_right" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="宽带充值教程"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/life_two_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey_100"
+        android:paddingLeft="26dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/ic_right" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="海大通讯录"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/life_three_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey_100"
+        android:paddingLeft="26dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/ic_right" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="校车时间表"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
