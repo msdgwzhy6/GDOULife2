@@ -56,9 +56,6 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener{
     public void onClick(View v) {
 
         switch (v.getId()) {
-//            case R.id.my_course_relativeLayout:
-//                startActivity(new Intent(mContext, CourseActivity.class));
-//                break;
             case R.id.my_grade_relativeLayout:
                 startActivity(new Intent(mContext, GradeSearchActivity.class));
                 break;

@@ -37,10 +37,6 @@
             android:label="@string/title_activity_books_detail"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CourseActivity"
-            android:label="@string/title_activity_course"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.GradeSearchActivity"
             android:label="@string/title_activity_grade"
             android:screenOrientation="portrait" />
