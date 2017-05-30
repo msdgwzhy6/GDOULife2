@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fedming.gdoulife.R;
-import com.fedming.gdoulife.adapter.BaseRecycleViewHolderView;
 import com.fedming.gdoulife.adapter.BorrowedBooksRecyclerViewAdapter;
 import com.fedming.gdoulife.app.AppConfig;
 import com.fedming.gdoulife.utils.SharedPreferencesUtils;
@@ -189,9 +188,7 @@ public class LibraryHomeFragment extends BaseFragment {
 
                     @Override
                     public void onResponse(String response, int id) {
-                        progressDialog.dismiss();
                         getUserInformation();
-                        ToastUtils.showShort(mContext, "登录成功~");
                         Log.i(TAG, "onResponse: " + response);
                     }
                 });
@@ -211,15 +208,13 @@ public class LibraryHomeFragment extends BaseFragment {
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         ToastUtils.showShort(mContext, "数据异常~");
-                        progressDialog.hide();
+                        progressDialog.dismiss();
                     }
 
                     @Override
                     public void onResponse(String response, int id) {
                         refreshView(response);
-                        progressDialog.hide();
-                        loginLinearlayout.setVisibility(View.GONE);
-                        contentLinearlayout.setVisibility(View.VISIBLE);
+                        progressDialog.dismiss();
                     }
                 });
     }
@@ -229,7 +224,6 @@ public class LibraryHomeFragment extends BaseFragment {
         if (!StringUtils.isFine(response)) {
             return;
         }
-
         List<Map<String, String>> bookList = null;
         Element element;
 //        String accountNumber = null;
@@ -246,7 +240,13 @@ public class LibraryHomeFragment extends BaseFragment {
             //姓名
             accountName = elements.get(1).text().split("】")[1];
             Log.i(TAG, "accountName: " + accountName);
+            userNameTextView.setText(accountName);
 
+            if (StringUtils.isFine(accountName)) {
+                ToastUtils.showShort(mContext, "登录成功~");
+                loginLinearlayout.setVisibility(View.GONE);
+                contentLinearlayout.setVisibility(View.VISIBLE);
+            }
             /**
              * 获取借阅图书详细信息
              */
@@ -262,21 +262,18 @@ public class LibraryHomeFragment extends BaseFragment {
                 }
                 bookList.add(map);
             }
-            userNameTextView.setText(accountName);
             adapter.addDatas(bookList);
-            final List<Map<String, String>> finalBookList = bookList;
-            adapter.setItemClickListener(new BaseRecycleViewHolderView.MyItemClickListener() {
-                @Override
-                public void onItemClick(View view, int position) {
-                    String bookNo = finalBookList.get(position).get("0");
+//            final List<Map<String, String>> finalBookList = bookList;
+//            adapter.setItemClickListener(new BaseRecycleViewHolderView.MyItemClickListener() {
+//                @Override
+//                public void onItemClick(View view, int position) {
+//                    String bookNo = finalBookList.get(position).get("0");
 //                    doRenew(bookNo);
-                }
-            });
+//                }
+//            });
         } catch (Exception e) {
             Log.i(TAG, "Data Error");
-//            ToastUtils.showShort(mContext, "未找到相关借阅记录");
         } finally {
-            userNameTextView.setText(accountName);
             errorTextView.setVisibility(View.VISIBLE);
         }
     }

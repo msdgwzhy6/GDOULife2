@@ -40,6 +40,7 @@
             android:drawableLeft="@mipmap/ic_login_user"
             android:drawablePadding="5dp"
             android:hint="输入您的学号"
+            android:maxLength="12"
             android:inputType="number"
             android:textSize="16sp" />
 

@@ -61,6 +61,7 @@
             android:drawablePadding="5dp"
             android:hint="输入您的学号"
             android:inputType="number"
+            android:maxLength="12"
             android:textSize="16sp" />
 
         <EditText

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -224,6 +225,11 @@ public class GradeSearchActivity extends BaseActivity implements View.OnClickLis
 
     private void getViewStateValue(final String content) {
         String url = SquareSystemBiz.parseMenu(content).get("成绩查询");
+        if (TextUtils.isEmpty(url)) {
+            progressDialog.dismiss();
+            ToastUtils.showLong(mContext, "查询失败，请检查你的账号密码！");
+            return;
+        }
         OkHttpUtils
                 .get()
                 .url(url)
@@ -251,6 +257,11 @@ public class GradeSearchActivity extends BaseActivity implements View.OnClickLis
     private void getGrade(String content, String VIEWSTATE) {
         try {
             String url = SquareSystemBiz.parseMenu(content).get("成绩查询");
+            if (TextUtils.isEmpty(url)) {
+                progressDialog.dismiss();
+                ToastUtils.showLong(mContext, "查询失败，请检查你的账号密码验证码！");
+                return;
+            }
             Log.i(TAG, "course url: " + url);
             OkHttpUtils
                     .post()

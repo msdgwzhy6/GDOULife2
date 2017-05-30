@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -180,6 +181,11 @@ public class CourseFragment extends BaseFragment implements View.OnClickListener
 
         try {
             String url = SquareSystemBiz.parseMenu(content).get("学生个人课表");
+            if (TextUtils.isEmpty(url)) {
+                progressDialog.dismiss();
+                ToastUtils.showLong(mContext, "登录失败，请检查你的账号密码验证码！");
+                return;
+            }
             OkHttpUtils
                     .get()
                     .url(url)
