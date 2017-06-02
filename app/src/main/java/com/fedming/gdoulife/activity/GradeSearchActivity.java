@@ -132,7 +132,8 @@ public class GradeSearchActivity extends BaseActivity implements View.OnClickLis
             }
         });
 
-        String[] items = {"2014-2015 第一学期", "2014-2015 第二学期", "2015-2016 第一学期", "2015-2016 第二学期"};
+        String[] items = {"2013-2014 第一学期", "2013-2014 第二学期", "2014-2015 第一学期", "2014-2015 第二学期",
+                "2015-2016 第一学期", "2015-2016 第二学期", "2016-2017 第一学期"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
@@ -141,20 +142,32 @@ public class GradeSearchActivity extends BaseActivity implements View.OnClickLis
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        XUENIAN = "2014-2015";
+                        XUENIAN = "2013-2014";
                         XUEQI = "1";
                         break;
                     case 1:
-                        XUENIAN = "2014-2015";
+                        XUENIAN = "2013-2014";
                         XUEQI = "2";
                         break;
                     case 2:
-                        XUENIAN = "2015-2016";
+                        XUENIAN = "2014-2015";
                         XUEQI = "1";
                         break;
                     case 3:
+                        XUENIAN = "2014-2015";
+                        XUEQI = "2";
+                        break;
+                    case 4:
+                        XUENIAN = "2015-2016";
+                        XUEQI = "1";
+                        break;
+                    case 5:
                         XUENIAN = "2015-2016";
                         XUEQI = "2";
+                        break;
+                    case 6:
+                        XUENIAN = "2016-2017";
+                        XUEQI = "1";
                         break;
                 }
             }
